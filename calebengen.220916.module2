@@ -1,0 +1,18 @@
+    1  pwd
+    2  cd /var/log
+    3  cd ..
+    4  pwd
+    5  ls
+    6  ls -l
+    7  ls -ltr
+    8  cd /
+    9  cd /home
+   10  cd ..
+   11  man ls
+   12  cd /var
+   13  man ls
+   14  ls --reverse -S
+   15  uname
+   16  cd ~
+   17  cd C268/
+   18  history > calebengen.220916.module2

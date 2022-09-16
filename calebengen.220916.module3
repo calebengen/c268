@@ -1,0 +1,50 @@
+    1  cd
+    2  pwd
+    3  mkdir Algo1
+    4  cd Algo1
+    5  mkdir config bin logs scripts
+    6  cd config
+    7  touch config.config variables
+    8  cd ..
+    9  cd scripts
+   10  touch start.sh stop.sh admin.sh
+   11  cd
+   12  cd Algo1/logs
+   13  touch today.log
+   14  cd
+   15  ls -lR
+   16  rm -rf Algo1/variables
+   17  cd Algo1
+   18  ls
+   19  cd config
+   20  /ls
+   21  ls
+   22  cd
+   23  cd Algo1/config
+   24  rm variables
+   25  cd
+   26  remove -rf Algo1/bin
+   27  rm -rf Algo1/bin
+   28  cd Algo1
+   29  mkdir bin
+   30  cd logs
+   31  mkdir oldlogs
+   32  cd oldlogs
+   33  mkdir 2019 2018 2017
+   34  cd 2017
+   35  touch 2017.log
+   36  cd ..
+   37  cd 2018
+   38  touch 2018.log
+   39  cd ..
+   40  cd 2019
+   41  touch 2019.log
+   42  cd
+   43  rm -rf Algo1/logs/oldlogs
+   44  cd
+   45  find ~ -name ".sh"
+   46  find ~ .sh
+   47  cd Algo1/scripts
+   48  rm s*.sh
+   49  ls
+   50  history > calebengen.220916.module3

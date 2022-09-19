@@ -1,0 +1,108 @@
+    1  clear
+    2  STOCK=AAPL
+    3  echo $STOCK
+    4  STOCK=${STOCK}_US
+    5  echo $STOCK
+    6  PRICE=290.84
+    7  echo "The current price of $STOCK is $PRICE"
+    8  WHOAMI=$USER
+    9  SERVERTYPE($uname)
+   10  SERVERTYPE(uname)
+   11  $SERVERTYPE(uname)
+   12  SERVERTYPE=(uname)
+   13  echo SERVERTYPE
+   14  echo $SERVERTYPE
+   15  SERVERTYPE=($uname)
+   16  echo $SERVERTYPE
+   17  SERVERTYPE=$(uname)
+   18  echo $SERVERTYPE
+   19  echo ..
+   20  echo (..)
+   21  ls -t
+   22  uname
+   23  uname -a
+   24  uname -m
+   25  man uname
+   26  history >file.txt
+   27  CMD='uname -i'
+   28  CMD
+   29  $CMD
+   30  echo $CMD
+   31  echo ${CMD}
+   32  echo {$CMD}
+   33  echo $'CMD'
+   34  echo $($CMD)
+   35  mkdir scripts
+   36  echo $PATH
+   37  man mkdir
+   38  env
+   39  echo $PATH
+   40  man env
+   41  env scripts $PATH
+   42  ls
+   43  env scripts $PATH
+   44  env scripts=$PATH
+   45  cd scripts
+   46  ls
+   47  cd
+   48  $PATH
+   49  export PATH=$PATH:/scripts
+   50  $PATH
+   51  rm -rf Algo1
+   52  ls
+   53  mkdir Payment1
+   54  cd Payment1
+   55  mkdir logs configuration scripts
+   56  cd scripts
+   57  touch start.sh
+   58  cd ..
+   59  cd configuration
+   60  touch instance.properties
+   61  chmod u=rwx,og=r instance.properties
+   62  cd ..
+   63  cd scripts
+   64  ls
+   65  chmod ug=rwx,o=x start.sh
+   66  cd
+   67  (man cat) > cat.output
+   68  ls
+   69  cat cat.output
+   70  chmod ug=rwx,o=r cat.output
+   71  cd
+   72  pwd
+   73  ls
+   74  rm -rf Payment1
+   75  rm -i cat.output
+   76  ls
+   77  mkdir temp
+   78  $temp
+   79  env MYTEMP ~/temp
+   80  env MYTEMP temp
+   81  env MYTEMP=temp
+   82  MYTEMP
+   83  cd $MYTEMP
+   84  env MYTEMP=/home/~/temp
+   85  cd $MYTEMP
+   86  ls
+   87  pwd
+   88  env MYTEMP=/home/ec2-user/temp
+   89  cd $MYTEMP
+   90  echo $MYTEMP
+   91  env -u MYTEMP
+   92  export MYTEMP=/home/ec2-user/temp
+   93  cd $MYTEMP
+   94  cd
+   95  env MYTEMP -u
+   96  env -u MYTEMP
+   97  cd $MYTEMP
+   98  env -v MYTEMP
+   99  env -u MYTEMP
+  100  cd $MYTEMP
+  101  cd
+  102  cd $MYTEMP
+  103  cd
+  104  cd c268
+  105  git --help
+  106  $history
+  107  history
+  108  history >calebengen.220919.module4

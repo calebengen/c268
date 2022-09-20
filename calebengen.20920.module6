@@ -1,0 +1,64 @@
+    1  ps -e
+    2  echo $USER
+    3  ps -e |grep ec2-user
+    4  ps
+    5  man ps
+    6  man ps > ps_manuel
+    7  less ps-manue
+    8  less ps_manuel 
+    9  ps -ejh
+   10  ps-ej
+   11  ps -ej
+   12  ps -ej | grep $USER
+   13  ps -eh
+   14  man ps
+   15  ps -eo pid,tid,class,rtprio,ni,pri,psr,pcpu,stat,wchan:14,comm
+   16  ps -eo pid,tid,class,rtprio,ni,pri,psr,pcpu,stat,user
+   17  ps -eo pid,tid,class,rtprio,ni,pri,psr,pcpu,stat,user | grep ec2-user
+   18* ps -e
+   19  ps -eo user
+   20  ps -ejh
+   21  ps -eo pid,user,cmd
+   22  ps -eo pid > list
+   23  sleep 300 &
+   24  ps
+   25  man kill
+   26  kill 30070
+   27  ps
+   28  man ps
+   29  top
+   30  clear
+   31  top root
+   32  man top
+   33  man more
+   34  man top
+   35  top -u root
+   36  top
+   37  top |grep root
+   38  /clear
+   39  clear
+   40  top
+   41  ping yahoo.com
+   42  man ping
+   43  ping -R yahoo.com > yahoo.route
+   44  cat yahoo.route
+   45  ping -R yahoo.com > yahoo.route
+   46  cat yahoo.route
+   47  man netstat
+   48  netstat yahoo.com > yahoo.route
+   49  natstat -r yahoo.com > yahoo.route
+   50  netstat -r yahoo.com > yahoo.route
+   51  traceroute yahoo.com > yahoo.route
+   52  cat yahoo.route
+   53  netstat -a
+   54  ln -s yahoo.route route
+   55  ls
+   56  netstat -a > output
+   57  mkdir network
+   58  mv output network
+   59  mv yahoo.route network
+   60  mv route route network
+   61  mv route network
+   62  ls
+   63  ipconfig
+   64  history > calebengen.20920.module6

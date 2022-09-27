@@ -1,0 +1,31 @@
+#!/bin/bash
+
+#This is a script that takes a file of integers as input and returns a reverse sorted list with no duplicates
+
+# Initialize arrays
+datArray=()
+finalArray=()
+
+#Read file and store inputs in an array
+while read file; do
+	datArray+=(`echo $file | awk '{print $0}'`) 
+done < $1 #Takes the integer file as an arg
+
+# Sorts the Array data
+sortedArr=($(printf '%s\n' "${datArray[@]}"|sort -rn)) #sorts the Array
+
+# Removes duplicate numbers
+previous=""
+for k in ${sortedArr[@]}; do
+	if  [[ $k -eq $previous ]]; then continue
+	else
+		finalArray+=($k)
+	fi
+	previous=$k
+done
+	
+#echo ${datArray[@]}
+#echo ${sortedArr[@]}
+echo ${finalArray[@]}
+exit 0
+

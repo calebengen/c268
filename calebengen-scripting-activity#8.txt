@@ -1,0 +1,84 @@
+#!/bin/bash
+
+# This is a script that takes between 5 and 10 integers and prints the product,
+# sum, average, min, max, and entered values.
+
+# Initialize variables
+
+i=0
+j=0
+newVar=""
+numVar=num
+input2="a"
+product=1
+max="0"
+min="0"
+sum=0
+saveArr=()
+while [[ $i -le 4 ]]; do # asks for the first 5 integers
+	echo "Please enter a number"
+	read input
+	if ! [ $input -eq $input 2>/dev/null ]; then #checks if entered data is an integer
+                echo "Please only enter integers" #Error message returns if non-int entered
+                exit 1
+        fi
+		product=$(( product*input )) #performs calculations concurrently with entry
+		sum=$(( $sum + $input ))
+	if [ $i == 0 ]; then
+	       min=$input
+	       max=$input
+        else
+		if [ $input -lt $min ]; then
+			min=$input
+		elif [ $input -gt $max ]; then
+			max=$input
+		fi
+	fi	       
+
+	saveArr+=($input) #Stores entries as a series of variables
+	
+	((i++)) #Increment for while llop
+done
+
+# Same as previous loop except asks for an additional input, and finishes if 10 entries or if user whishes to finish
+while [[ $i -le 9 ]] && [[ $input2 != "n" ]]; do
+	echo "Do you wish to enter more numbers? Type "n" for no and hit any other key to continue"
+	read confDen
+	input2=$confDen
+	if [[ $input2 == "n" ]]; then # For additional input, if n is hit, stops loop
+		break
+	else # Same process as previous loop
+		echo "Please enter a number"
+		read numIn
+		if ! [ $numIn -eq $numIn 2>/dev/null ]; then
+                	echo "Please only enter integers" 
+                	exit 1
+       		fi
+		product=$(( $product*$numIn ))
+                sum=$(( sum + numIn ))
+		if [ $numIn -lt $min ]; then
+                        min=$numIn
+                elif [ $numIn -gt $max ]; then
+                        max=$numIn
+                fi
+
+		saveArr+=($numIn)
+	fi
+	((i++))
+done
+# Final calculation
+average=`echo "$sum $i" | awk '{printf "%.2f \n", $1/$2}'`
+# Print Values
+echo "User entries: "
+while [[ $j -lt $i ]]; do
+	l=$((j+1))
+	echo "Entry $l: ${saveArr[$j]}"
+	((j++))
+done
+echo "The product of the entries is $product"
+echo "The sum of the entries is $sum"
+echo "The average of the entries is $average"
+echo "The minimum of the entries is $min"
+echo "The maximum of the entries is $max"
+exit 0
+

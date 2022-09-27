@@ -1,0 +1,46 @@
+#!/bin/bash
+
+
+
+#instantiate variables
+containsLength=0
+containsNum=0
+containsLet=0
+containsUp=0
+containsLow=0
+length=0
+
+echo "Enter Password"
+read pswrd
+
+#Beginning of Conditional check
+#Converts each character of the password into Ascii value
+#Checks for conditions if character is between corresponding Ascii values
+for ((i=0; i<${#pswrd}; i++)) do
+	j=${pswrd:i:1} #Checks the i'th character of the password
+	jVal=$(echo -n "$j" | od -An -vtu1) #Converts the character into its Ascii value
+	
+	if [ 48 -le $jVal ] && [ 57 -ge $jVal ]; then #checks if char is 0-9
+		containsNum=1 
+	fi
+	if [ 65 -le $jVal ] &&[ 90 -ge $jVal ]; then #checks if char is A-Z
+		containsLet=1
+		containsUp=1
+	fi
+	if [ 97 -le $jVal ] &&[ 122 -ge $jVal ]; then #checks if char is a-z
+		containsLet=1
+		containsLow=1
+	fi
+	((length++)) #over the whole iteration will calculate the length of the password
+done
+if [ 8 -le $length ]; then #checks if the string is at least 8 characters long
+	containsLength=1
+fi
+leqReq=$(( $containsLength+$containsNum+$containsLet+$containsUp+$containsLow ))
+if [ $leqReq -ge 5 ]; then #checks if all conditions are met, returns 0 is so, 1 if not
+	echo "Password is secure"
+	exit 0
+else
+	echo "Password is not secure"
+	exit 1
+fi
